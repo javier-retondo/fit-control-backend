@@ -1,8 +1,8 @@
 {
    "swagger": "2.0",
    "info": {
-      "title": "SOOFIA REPORTS API",
-      "description": "SOOFIA REPORTS API - TYPESCRIPT AND EXPRESS",
+      "title": "FIT CONTROL API",
+      "description": "FIT CONTROL API - TYPESCRIPT AND EXPRESS",
       "version": "1.0"
    },
    "produces": ["application/json"],

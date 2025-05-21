@@ -2,7 +2,7 @@
 
 ## Overview
 
-**API for Soofia Reports** is designed to help developers build secure and scalable APIs quickly. This project serves as a foundation for creating MVPs with minimal setup and maximum efficiency.
+**API for Fit Control System** is designed to help developers build secure and scalable APIs quickly. This project serves as a foundation for creating MVPs with minimal setup and maximum efficiency.
 
 ### Features:
 
@@ -31,8 +31,8 @@ Ensure the following tools are installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/sooft/sooft_reports_soofia.git
-   cd sooft_reports_soofia
+   git clone https://github.com/javier-retondo/fit-control-backend.git
+   cd fit-control
    ```
 
 2. Create a .env file in the root directory with the following structure:
@@ -66,8 +66,8 @@ Ensure the following tools are installed:
 
 * For Production:
    ```bash
-   docker build -t sooft_reports_soofia .
-   docker run sooft_reports_soofia
+   docker build -t fit-control .
+   docker run fit-control
    ```
 
 ---

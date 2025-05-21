@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-   sooft_reports_soofia-app:
+   fit-control-app:
       build:
          context: .
          dockerfile: Dockerfile.dev
@@ -16,17 +16,17 @@ services:
       depends_on:
          - redis
       networks:
-         - sooft_reports_soofia-network
+         - fit-control-network
 
    redis:
       image: redis:alpine
       ports:
          - '6379:6379'
       networks:
-         - sooft_reports_soofia-network
+         - fit-control-network
 
 networks:
-   sooft_reports_soofia-network:
+   fit-control-network:
       driver: bridge
 
 volumes:

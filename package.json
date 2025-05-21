@@ -1,10 +1,10 @@
 {
-   "name": "sooft_reports_soofia",
+   "name": "fit-control",
    "version": "1.0.0",
    "bin": {
       "cli": "./cli/cli.js"
    },
-   "description": "Microservice for Sofia Reports",
+   "description": "Backend for Fit Control",
    "main": "index.js",
    "scripts": {
       "test": "jest --detectOpenHandles --forceExit --coverage --verbose",
@@ -21,7 +21,7 @@
       "encrypt": "ts-node src/utils/encryptor/encrypt.ts",
       "decrypt": "ts-node src/utils/encryptor/decrypt.ts"
    },
-   "author": "Soofia",
+   "author": "Javier Retondo | Valeria Deharbe",
    "license": "ISC",
    "dependencies": {
       "axios": "^1.7.9",

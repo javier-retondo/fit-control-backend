@@ -34,9 +34,4 @@ export abstract class ConfigServer {
          database: this.getNumberEnvironment('REDIS_DATABASE'),
       };
    }
-   public get externalApis() {
-      return {
-         soofia: this.getEnvironment('SOOFIA_API'),
-      };
-   }
 }

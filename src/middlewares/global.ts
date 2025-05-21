@@ -3,20 +3,13 @@ import { plainToInstance } from 'class-transformer';
 import { error } from '../utils/network/responses';
 import { validate } from 'class-validator';
 import { redisClient } from '../config/redisManager';
-import { SoofiaUsersServices } from '../external/soofia/services/users';
-import { IUserDataResponse } from '../external/soofia/interfaces/users';
 
 export class GlobalMW {
    async verifyToken(req: Request, res: Response, next: NextFunction) {
       const authHeader = req.headers['authorization'];
-      const bussinessId = req.headers['businessid'];
-      const soofiaUsersServices = new SoofiaUsersServices();
+
       if (!authHeader || !authHeader.startsWith('Bearer ')) {
          res.status(400).json({ message: 'No se ha proporcionado el token de autorización' });
-         return;
-      }
-      if (!bussinessId) {
-         res.status(400).json({ message: 'No se ha proporcionado el id de la empresa' });
          return;
       }
 
@@ -33,15 +26,15 @@ export class GlobalMW {
       }
 
       try {
-         const sessionDataRedis = await redisClient.get(`session:${String(token)}:${bussinessId}`);
+         const sessionDataRedis = await redisClient.get(`session:${String(token)}`);
          if (sessionDataRedis) {
-            const session: IUserDataResponse = JSON.parse(sessionDataRedis);
+            const session = JSON.parse(sessionDataRedis);
             req.body.userData = {
                ...session,
                business_ids: [Number(1)],
             };
          } else {
-            const loginCheck: IUserDataResponse = await soofiaUsersServices.checkLogin(token);
+            const loginCheck = {};
             if (!loginCheck) {
                console.log('Token no válido - Usuario inexistente/inactivo o token expirado');
                return error({
@@ -51,32 +44,11 @@ export class GlobalMW {
                   status: 401,
                });
             }
-            if (
-               !loginCheck.business_ids.length ||
-               !loginCheck.business_ids.includes(Number(bussinessId)) ||
-               !loginCheck.businesses.find((business) => business.id === Number(bussinessId))
-            ) {
-               console.log('Empresa no válida - Usuario inexistente/inactivo o token expirado');
-               return error({
-                  req,
-                  res,
-                  body: 'Token no válido - Usuario inexistente/inactivo o token expirado',
-                  status: 401,
-               });
-            }
-            const userData: IUserDataResponse = {
+            const userData = {
                ...loginCheck,
-               businesses: loginCheck.businesses.find(
-                  (business) => business.id === Number(bussinessId),
-               ) as any,
-               business_ids: [Number(1)],
             };
 
-            await redisClient.set(
-               `session:${String(token)}:${bussinessId}`,
-               JSON.stringify(userData),
-               60 * 10,
-            );
+            await redisClient.set(`session:${String(token)}`, JSON.stringify(userData), 60 * 10);
             req.body.userData = userData;
          }
          next();
