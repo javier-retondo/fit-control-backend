@@ -17,5 +17,6 @@ export const HORARIO_CLASE: IMetadata<IHorarioClaseColumnsAliases, IHorarioClase
       CLASE: 'Clase',
       SEDE: 'Sede',
       RESERVAS: 'Reservas',
+      INSTRUCTOR: 'Instructor',
    },
 };

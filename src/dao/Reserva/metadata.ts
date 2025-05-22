@@ -11,5 +11,8 @@ export const RESERVA: IMetadata<IReservaColumnsAliases, IReservaAssociations> = 
    },
    PLURAL: 'Reservas',
    SINGULAR: 'Reserva',
-   ASSOCIATIONS: {},
+   ASSOCIATIONS: {
+      HORARIO: 'Horario',
+      SOCIO: 'Socio',
+   },
 };

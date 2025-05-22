@@ -13,5 +13,8 @@ export const RUTINA: IMetadata<IRutinaColumnsAliases, IRutinaAssociations> = {
    },
    PLURAL: 'Rutinas',
    SINGULAR: 'Rutina',
-   ASSOCIATIONS: {},
+   ASSOCIATIONS: {
+      SOCIO: 'Socio',
+      EJERCICIOS: 'Ejercicios',
+   },
 };

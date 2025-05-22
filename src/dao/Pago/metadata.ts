@@ -12,5 +12,8 @@ export const PAGO: IMetadata<IPagoColumnsAliases, IPagoAssociations> = {
    },
    PLURAL: 'Pagos',
    SINGULAR: 'Pago',
-   ASSOCIATIONS: {},
+   ASSOCIATIONS: {
+      MEDIO_PAGO: 'MedioPago',
+      SUSCRIPCION_SOCIO: 'SuscripcionSocio',
+   },
 };

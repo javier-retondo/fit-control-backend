@@ -14,7 +14,15 @@ import { Sede } from './Sede/model';
 import { HorarioSede } from './SedeHorario/model';
 import { Suscripcion } from './Suscripcion/model';
 import { SocioSuscripcion } from './SuscripcionSocio/model';
-import { Usuario } from './Usuario/model';
+import {
+   Usuario,
+   Socio,
+   Administrador,
+   Recepcionista,
+   Instructor,
+   Coordinador,
+   Superadmin,
+} from './Usuario/model';
 
 export {
    Clase,
@@ -34,4 +42,10 @@ export {
    Suscripcion,
    SocioSuscripcion,
    Usuario,
+   Socio,
+   Administrador,
+   Recepcionista,
+   Instructor,
+   Coordinador,
+   Superadmin,
 };

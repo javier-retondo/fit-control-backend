@@ -17,5 +17,11 @@ export const USUARIO: IMetadata<IUsuarioColumnsAliases, IUsuarioAssociations> = 
    },
    PLURAL: 'Usuarios',
    SINGULAR: 'Usuario',
-   ASSOCIATIONS: {},
+   ASSOCIATIONS: {
+      PERFIL: 'Perfil',
+      RUTINAS: 'Rutinas',
+      SUSCRIPCIONES: 'Suscripciones',
+      HORARIOS_CLASES: 'HorariosClases',
+      RESERVAS: 'Reservas',
+   },
 };

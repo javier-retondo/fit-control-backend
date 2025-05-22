@@ -2,6 +2,7 @@ import { DataTypes, Model, Optional } from 'sequelize';
 import { sequelize } from '../../config';
 import { USUARIO } from './metadata';
 import { IUsuario } from './interface';
+import { EPerfil } from '../Perfil/interface';
 
 type UsuarioCreationAttributes = Optional<IUsuario, 'id'>;
 
@@ -60,7 +61,21 @@ Usuario.init(
          plural: USUARIO.PLURAL,
          singular: USUARIO.SINGULAR,
       },
+      scopes: {
+         socio: { where: { superadmin: false, perfil_id: EPerfil.SOCIO } },
+         administrador: { where: { superadmin: false, perfil_id: EPerfil.ADMINISTRADOR } },
+         recepcionista: { where: { superadmin: false, perfil_id: EPerfil.RECEPCIONISTA } },
+         instructor: { where: { superadmin: false, perfil_id: EPerfil.INSTRUCTOR } },
+         coordinador: { where: { superadmin: false, perfil_id: EPerfil.COORDINADOR } },
+         superadmin: { where: { superadmin: true } },
+      },
    },
 );
+const Socio = Usuario.scope('socio');
+const Administrador = Usuario.scope('administrador');
+const Recepcionista = Usuario.scope('recepcionista');
+const Instructor = Usuario.scope('instructor');
+const Coordinador = Usuario.scope('coordinador');
+const Superadmin = Usuario.scope('superadmin');
 
-export { Usuario };
+export { Usuario, Socio, Administrador, Recepcionista, Instructor, Coordinador, Superadmin };

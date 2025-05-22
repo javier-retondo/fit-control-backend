@@ -1,3 +1,5 @@
+import { IEjercicio, IUsuario } from '../interfaces';
+
 export type IRutina = {
    id?: number;
    socio_id: number;
@@ -5,6 +7,10 @@ export type IRutina = {
    nombre: string;
    objetivo: string;
    observaciones: string;
+
+   // relaciones
+   Socio?: IUsuario;
+   Ejercicios?: IEjercicio[];
 };
 
 type RutinaColumnAliasKeys =
@@ -18,4 +24,8 @@ export type IRutinaColumnsAliases = {
    [key in RutinaColumnAliasKeys]: keyof IRutina;
 };
 
-export type IRutinaAssociations = object;
+type RutinaAssociationsKeys = 'SOCIO' | 'EJERCICIOS';
+
+export type IRutinaAssociations = {
+   [key in RutinaAssociationsKeys]: keyof IRutina;
+};

@@ -1,4 +1,4 @@
-import { IClase, ISede } from '../interfaces';
+import { IClase, ISede, IUsuario } from '../interfaces';
 import { Reserva } from '../models';
 
 export type IHorarioClase = {
@@ -13,6 +13,7 @@ export type IHorarioClase = {
    Clase?: IClase;
    Sede?: ISede;
    Reservas?: Reserva[];
+   Instructor?: IUsuario;
 };
 
 type HorarioClaseColumnAliasKeys =
@@ -26,7 +27,7 @@ export type IHorarioClaseColumnsAliases = {
    [key in HorarioClaseColumnAliasKeys]: keyof IHorarioClase;
 };
 
-export type HorarioClaseAssociationsKeys = 'CLASE' | 'SEDE' | 'RESERVAS';
+export type HorarioClaseAssociationsKeys = 'CLASE' | 'SEDE' | 'RESERVAS' | 'INSTRUCTOR';
 
 export type IHorarioClaseAssociations = {
    [key in HorarioClaseAssociationsKeys]: keyof IHorarioClase;

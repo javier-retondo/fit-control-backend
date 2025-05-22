@@ -11,5 +11,8 @@ export const SEDE: IMetadata<ISedeColumnsAliases, ISedeAssociations> = {
    },
    PLURAL: 'Sedes',
    SINGULAR: 'Sede',
-   ASSOCIATIONS: {},
+   ASSOCIATIONS: {
+      HORARIOS: 'Horarios',
+      CLASES: 'Clases',
+   },
 };

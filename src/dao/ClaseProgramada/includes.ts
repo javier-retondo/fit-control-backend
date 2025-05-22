@@ -1,4 +1,4 @@
-import { CLASE, RESERVA, SEDE } from '../metadata';
+import { CLASE, RESERVA, SEDE, USUARIO } from '../metadata';
 import { IHorarioClaseAssociations } from './interface';
 import { HORARIO_CLASE } from './metadata';
 
@@ -26,5 +26,9 @@ export const horarioclaseIncludes: {
          RESERVA.COLUMNS.HORARIO_CLASE_ID,
          RESERVA.COLUMNS.SOCIO_ID,
       ],
+   },
+   {
+      as: HORARIO_CLASE.ASSOCIATIONS.INSTRUCTOR,
+      attributes: [USUARIO.COLUMNS.ID, USUARIO.COLUMNS.NOMBRE, USUARIO.COLUMNS.APELLIDO],
    },
 ];

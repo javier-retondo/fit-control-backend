@@ -17,5 +17,7 @@ export const SOCIO_SUSCRIPCION: IMetadata<
    },
    PLURAL: 'SocioSuscripciones',
    SINGULAR: 'SocioSuscripcion',
-   ASSOCIATIONS: {},
+   ASSOCIATIONS: {
+      SUSCRIPCION: 'Suscripcion',
+   },
 };
