@@ -2,7 +2,8 @@ export type ISuscripcion = {
    id?: number;
    nombre: string;
    descripcion: string;
-
+   vigencia_desde: Date;
+   vigencia_hasta: Date;
    estado: string;
    anual: boolean;
    importe: number;

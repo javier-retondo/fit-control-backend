@@ -34,4 +34,13 @@ export abstract class ConfigServer {
          database: this.getNumberEnvironment('REDIS_DATABASE'),
       };
    }
+   public get superAdminData() {
+      return {
+         nombre: this.getEnvironment('SUPERADMIN_NOMBRE') || '',
+         apellido: this.getEnvironment('SUPERADMIN_APELLIDO') || '',
+         email: this.getEnvironment('SUPERADMIN_EMAIL') || '',
+         usuario: this.getEnvironment('SUPERADMIN_USUARIO') || '',
+         password: this.getEnvironment('SUPERADMIN_PASSWORD') || '',
+      };
+   }
 }

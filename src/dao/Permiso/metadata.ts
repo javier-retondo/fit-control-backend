@@ -5,10 +5,13 @@ export const PERMISO: IMetadata<IPermisoColumnsAliases, IPermisoAssociations> = 
    TABLE: 'permiso',
    COLUMNS: {
       ID: 'id',
-      MODULO_IS: 'modulo_id',
+      MODULO_ID: 'modulo_id',
       PERFIL_ID: 'perfil_id',
    },
    PLURAL: 'Permisos',
    SINGULAR: 'Permiso',
-   ASSOCIATIONS: {},
+   ASSOCIATIONS: {
+      MODULO: 'Modulo',
+      PERFIL: 'Perfil',
+   },
 };

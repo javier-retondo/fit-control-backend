@@ -19,7 +19,8 @@
       "generate-crud": "node cli/cli.js generate-crud",
       "generate-model": "node cli/cli.js generate-model",
       "encrypt": "ts-node src/utils/encryptor/encrypt.ts",
-      "decrypt": "ts-node src/utils/encryptor/decrypt.ts"
+      "decrypt": "ts-node src/utils/encryptor/decrypt.ts",
+      "sync-db": "ts-node ./src/seeders/syncModels.ts"
    },
    "author": "Javier Retondo | Valeria Deharbe",
    "license": "ISC",
@@ -36,8 +37,7 @@
       "inquirer": "^12.3.2",
       "moment": "^2.30.1",
       "morgan": "^1.10.0",
-      "pg": "^8.15.6",
-      "pg-hstore": "^2.3.4",
+      "mysql2": "^3.14.1",
       "rate-limit-redis": "^4.2.0",
       "redis": "^4.6.10",
       "reflect-metadata": "^0.2.2",

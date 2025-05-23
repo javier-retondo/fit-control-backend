@@ -1,3 +1,4 @@
+import { ESTADOS } from '../../utils/constants/SYSTEM_ENUMS';
 import { IPermiso } from '../Permiso/interface';
 import { IUsuario } from '../Usuario/interface';
 
@@ -10,9 +11,9 @@ export enum EPerfil {
 }
 
 export type IPerfil = {
-   id?: number;
+   id?: EPerfil;
    descripcion: string;
-   estado: string;
+   estado: ESTADOS;
 
    // relaciones
    Permisos?: IPermiso[];

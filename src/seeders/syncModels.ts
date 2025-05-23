@@ -1,7 +1,45 @@
 import { InitAllAssociations } from '../dao/associations';
-import {} from '../dao/models';
+import {
+   Clase,
+   HorarioClase,
+   Ejercicio,
+   FichaMedica,
+   MedioPago,
+   Mensaje,
+   Modulo,
+   Notificacion,
+   Pago,
+   Perfil,
+   Permiso,
+   Reserva,
+   Rutina,
+   Sede,
+   HorarioSede,
+   Suscripcion,
+   SocioSuscripcion,
+   Usuario,
+} from '../dao/models';
 
-const modelsMap: any = {};
+const modelsMap = {
+   Clase,
+   HorarioClase,
+   Ejercicio,
+   FichaMedica,
+   MedioPago,
+   Mensaje,
+   Modulo,
+   Notificacion,
+   Pago,
+   Perfil,
+   Permiso,
+   Reserva,
+   Rutina,
+   Sede,
+   HorarioSede,
+   Suscripcion,
+   SocioSuscripcion,
+   Usuario,
+};
 
 const initAllModels = async (
    force?: boolean,
@@ -25,7 +63,7 @@ const initAllModels = async (
    } else {
       for (const [name, model] of Object.entries(modelsMap)) {
          console.log(`   🔄 Sincronizando modelo: ${name}`);
-         // await model.sync({ force, alter });
+         await model.sync({ force, alter });
       }
    }
 

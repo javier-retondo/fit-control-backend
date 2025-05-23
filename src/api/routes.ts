@@ -1,3 +1,3 @@
-import { DashboardRouter } from './admin/dashboard/routes';
+//import { DashboardRouter } from './admin';
 
-export const Routes = [new DashboardRouter().router];
+export const Routes = [];

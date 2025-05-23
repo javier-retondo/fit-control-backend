@@ -34,7 +34,7 @@ export class Server extends ConfigServer {
    routes() {
       this.app.use('/static', express.static(staticFolderPath));
       this.app.use(this.apiBaseUrlV1, apiLimiter);
-      this.app.use(this.apiBaseUrlV1, this.routers_v1());
+      //this.app.use(this.apiBaseUrlV1, this.routers_v1());
       this.app.use(
          '/api/v1/documentation',
          swaggerUi_wallet.serveFiles(docJson, {}),

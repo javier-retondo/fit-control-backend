@@ -5,12 +5,14 @@ export type IUsuario = {
    nombre: string;
    apellido: string;
    email: string;
-   telefono: string;
-   avatar_url: string;
+   telefono?: string;
+   avatar_url?: string;
    password: string;
+   usuario: string;
    pass_provisoria: boolean;
    superadmin: boolean;
-   perfil_id: number;
+   perfil_id?: number;
+   dni?: string;
 
    // relaciones
    Perfil?: IPerfil;
@@ -28,9 +30,11 @@ type UsuarioColumnAliasKeys =
    | 'TELEFONO'
    | 'AVATAR_URL'
    | 'PASSWORD'
+   | 'USUARIO'
    | 'PASS_PROVISORIA'
    | 'SUPERADMIN'
-   | 'PERFIL_ID';
+   | 'PERFIL_ID'
+   | 'DNI';
 
 export type IUsuarioColumnsAliases = {
    [key in UsuarioColumnAliasKeys]: keyof IUsuario;

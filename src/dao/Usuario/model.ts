@@ -29,7 +29,7 @@ Usuario.init(
       },
       telefono: {
          type: DataTypes.STRING(20),
-         allowNull: false,
+         allowNull: true,
       },
       avatar_url: {
          type: DataTypes.STRING(250),
@@ -37,6 +37,10 @@ Usuario.init(
       },
       password: {
          type: DataTypes.STRING(255),
+         allowNull: false,
+      },
+      usuario: {
+         type: DataTypes.STRING(50),
          allowNull: false,
       },
       pass_provisoria: {
@@ -49,7 +53,11 @@ Usuario.init(
       },
       perfil_id: {
          type: DataTypes.INTEGER,
-         allowNull: false,
+         allowNull: true,
+      },
+      dni: {
+         type: DataTypes.STRING(20),
+         allowNull: true,
       },
    },
    {

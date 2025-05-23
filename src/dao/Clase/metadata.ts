@@ -10,5 +10,7 @@ export const CLASE: IMetadata<IClaseColumnsAliases, IClaseAssociations> = {
    },
    PLURAL: 'Clases',
    SINGULAR: 'Clase',
-   ASSOCIATIONS: {},
+   ASSOCIATIONS: {
+      HORARIOS: 'Horarios',
+   },
 };

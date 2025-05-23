@@ -1,6 +1,7 @@
 import { Clase } from './Clase/model';
 import { HorarioClase } from './ClaseProgramada/model';
 import { Ejercicio } from './Ejercicio/model';
+import { FichaMedica } from './FichaMedica/model';
 import { MedioPago } from './MedioPago/model';
 import { Mensaje } from './Mensaje/model';
 import { Modulo } from './Modulo/model';
@@ -28,6 +29,7 @@ export {
    Clase,
    HorarioClase,
    Ejercicio,
+   FichaMedica,
    MedioPago,
    Mensaje,
    Modulo,

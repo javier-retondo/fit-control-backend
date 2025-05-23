@@ -6,7 +6,7 @@ export const sequelize = new Sequelize(
    ConfigServer.prototype.dbConnection.user || '',
    ConfigServer.prototype.dbConnection.password || '',
    {
-      dialect: 'postgres',
+      dialect: 'mysql',
       host: ConfigServer.prototype.dbConnection.host,
       port: ConfigServer.prototype.dbConnection.port,
       logging: true,
